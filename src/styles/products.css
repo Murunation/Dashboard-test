@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+.tdButtons button {
+  background: none;
+  width: 40px;
+}

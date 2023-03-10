@@ -1,10 +1,9 @@
-*{
+* {
   box-sizing: border-box;
 }
 .App h1 {
   color: rgb(195, 219, 234);
-  margin: 0
-  ;
+  margin: 0;
   font-size: 42px;
 }
 .App {
@@ -13,20 +12,27 @@
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(66, 88, 127);
   text-align: center;
 }
-button{
+button {
   cursor: pointer;
   gap: 15px;
   width: 200px;
   height: 50px;
-  border-radius: 21px;
+  border-radius: 10px;
   border: none;
-
 }
-.buttons{
+.buttons {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 32px;
+}
+.activeBtn {
+  background-color: #8b89f9;
+  color: white;
+  border-radius: 4px;
+}
+.inactiveBtn {
+  border-radius: 4px;
 }

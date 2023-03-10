@@ -5,44 +5,45 @@ import Brand from "./components/Brand";
 import LoadMore from "./components/LoadMore";
 import Category from "./components/Category";
 import AddProduct from "./components/AddProduct";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 let buttonNames = [
   {
     name: "All Products",
     value: "all",
-    componentName: <Products/>
+    componentName: <Products />,
   },
   {
     name: "Load More",
     value: "load",
-    componentName: <LoadMore/>
+    componentName: <LoadMore />,
   },
   {
     name: "Filter by Category",
     value: "fCategory",
-    componentName: <Category/>
+    componentName: <Category />,
   },
   {
     name: "Filter by Brand",
     value: "fBrand",
-    componentName: <Brand/>
+    componentName: <Brand />,
   },
   {
     name: "Add Product",
     value: "add",
-    componentName: <AddProduct/>
+    componentName: <AddProduct />,
   },
 ];
 
 function App() {
   const [current, setCurrent] = useState(buttonNames[0]);
-    useEffect (()=>{
-      if(localStorage.getItem("buttonVal") ) {
-        buttonNames.find((btn) => btn.value === localStorage.getItem("buttonVal"))
-      }
-    }, []);
-  ;
-
+  useEffect(() => {
+    if (localStorage.getItem("buttonVal")) {
+      buttonNames.find(
+        (btn) => btn.value === localStorage.getItem("buttonVal")
+      );
+    }
+  }, []);
   function currentStateHandler(btn) {
     setCurrent(btn);
     localStorage.getItem("buttonVal", btn.value);
@@ -55,7 +56,9 @@ function App() {
           <button
             key={index}
             onClick={() => currentStateHandler(btn)}
-            className={current.value === btn.value ? "activeBtn" : "inactiveBtn"}
+            className={
+              current.value === btn.value ? "activeBtn" : "inactiveBtn"
+            }
           >
             {btn.name}
           </button>
